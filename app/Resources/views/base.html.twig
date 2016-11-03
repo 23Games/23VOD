@@ -13,6 +13,7 @@
 </head>
 <body>
 
+{% block all %}
     <nav class="navbar navbar-dark nav-color">  {# navbar-fixed-top#}
         <a class="navbar-brand" href="javascript:void(0)">23VOD</a>
         <ul class="nav navbar-nav">
@@ -41,6 +42,8 @@
     </nav>
     
 {% block body %}{% endblock %}
+
+{% endblock %}
 
 {% block javascripts %}
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"  crossorigin="anonymous"></script>
