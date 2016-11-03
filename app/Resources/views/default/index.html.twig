@@ -1,8 +1,101 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <div style="max-width: 1280px; margin: auto">
-        <img src="http://placeholder.pics/svg/1280x300/FF0000-FFFFFF/FF0000-FFFFFF/23VOD" class="img-responsive" alt="">
-        <script src="//content.jwplatform.com/players/g1vHS6ak-1l85A81K.js"></script>
+    <div class="container-fluid mp-baner-bg" style="background-image: url('{{ asset('assets/img/landing_bg.jpg') }}')">
+        <div class="container pt-8">
+            <div class="mp-baner-title">
+                <p>VoD 23Games</p>
+            </div>
+            <div class="mp-baner-subtitle">
+                <p>Polska to jedyny kraj, gdzie 23VoD jest dostępny. Możesz rzucić okiem na nasze video</p>
+            </div>
+            <div class="mp-baner-more">
+                <button class="btn btn-primary">Obejrzyj teraz</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row pt-3 pb-3">
+            <div class="col-md-4 mp-features">
+                <i class="fa fa-headphones mp-features-icon fa-5x" aria-hidden="true"></i>
+                <p class="mp-features-title">Najlepsze Audio</p>
+                <p class="mp-features-subtitle">Usłyszysz więcej dzięki nalepszemu audio.</p>
+            </div>
+            <div class="col-md-4 mp-features">
+                <i class="fa fa-play mp-features-icon fa-5x" aria-hidden="true"></i>
+                <p class="mp-features-title">Anime bez reklam </p>
+                <p class="mp-features-subtitle">Oglądaj filmy bez reklam, w tle lub offline na urządzeniach mobilnych</p>
+            </div>
+            <div class="col-md-4 mp-features">
+                <i class="fa fa-video-camera mp-features-icon fa-5x" aria-hidden="true"></i>
+                <p class="mp-features-title">Bogata ofrta</p>
+                <p class="mp-features-subtitle">W naszej ogromnej ofercie na pewno znajdziesz coś dla siebie</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid mp-baner-left-bg" style="background-image: url('{{ asset('assets/img/landing_bg.jpg') }}')">
+        <div class="container pt-8">
+            <div class="col-md-6">
+            <div class="mp-baner-left-title">
+                <p>VoD 23Games</p>
+            </div>
+            <div class="mp-baner-left-subtitle">
+                <p>Polska to jedyny kraj, gdzie 23VoD jest dostępny. Możesz rzucić okiem na nasze video</p>
+            </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid mp-baner-right-bg" style="background-image: url('{{ asset('assets/img/landing_bg.jpg') }}')">
+        <div class="container pt-8">
+            <div class="col-md-6 push-md-6">
+                <div class="mp-baner-right-title">
+                    <p>VoD 23Games</p>
+                </div>
+                <div class="mp-baner-right-subtitle">
+                    <p>Polska to jedyny kraj, gdzie 23VoD jest dostępny. Możesz rzucić okiem na nasze video</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row pt-3 pb-3">
+            <div class="col-md-6 mp-dual-column">
+                <p class="mp-dual-column-title">Najlepsze Audio</p>
+                <p class="mp-dual-column-subtitle">Usłyszysz więcej dzięki nalepszemu audio.</p>
+            </div>
+            <div class="col-md-6 mp-features">
+                <p class="mp-dual-column-title">Najlepsze Audio</p>
+                <p class="mp-dual-column-subtitle">Usłyszysz więcej dzięki nalepszemu audio.</p>
+            </div>
+        </div>
+        <hr>
+    </div>
+
+    <div class="container">
+        <div class="row pt-3 pb-3">
+            <div class="col-md-4 mp-features">
+                <i class="fa fa-headphones mp-features-icon fa-5x" aria-hidden="true"></i>
+                <p class="mp-features-title">Najlepsze Audio</p>
+                <p class="mp-features-subtitle">Usłyszysz więcej dzięki nalepszemu audio.</p>
+            </div>
+            <div class="col-md-4 mp-features">
+                <i class="fa fa-play mp-features-icon fa-5x" aria-hidden="true"></i>
+                <p class="mp-features-title">Anime bez reklam </p>
+                <p class="mp-features-subtitle">Oglądaj filmy bez reklam, w tle lub offline na urządzeniach mobilnych</p>
+            </div>
+            <div class="col-md-4 mp-features">
+                <i class="fa fa-video-camera mp-features-icon fa-5x" aria-hidden="true"></i>
+                <p class="mp-features-title">Bogata ofrta</p>
+                <p class="mp-features-subtitle">W naszej ogromnej ofercie na pewno znajdziesz coś dla siebie</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        {#<script src="//content.jwplatform.com/players/g1vHS6ak-1l85A81K.js"></script>#}
     </div>
 {% endblock %}

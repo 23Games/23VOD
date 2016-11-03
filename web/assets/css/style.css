@@ -1,3 +1,111 @@
+@media (min-width: 720px) {
+    .navbar{
+        border-radius: 0;
+    }
+}
+@font-face {
+    font-family: 'pixel'; /*a name to be used later*/
+    src: url('../font/8-BIT WONDER.TTF'); /*URL to font*/
+}
+
+.pt-8{
+    padding-top: 8rem!important;
+}
+.nav-color{
+    background-color: #2b2d2f;
+}
+.mp-baner{
+
+}
+.mp-baner-bg{
+    min-height: 640px;
+    text-align: center;
+}
+.mp-baner-title{
+    font-family: pixel;
+    text-align: center;
+    color: #FFFFFF;
+    font-size: 3rem;
+}
+.mp-baner-subtitle{
+    margin: auto;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    max-width: 552px;
+    color: #FFFFFF;
+    font-size: 2rem;
+}
+.mp-baner-more{
+    color: #FFFFFF;
+    font-size: 1rem;
+    padding-bottom: 3rem;
+}
+
+
+.mp-features{
+    text-align: center;
+}
+
+.mp-features-icon{
+    color: #FF0000;
+    font-size: 30px;
+}
+.fa-6x{
+    font-size: 8rem;
+}
+.mp-features-title{
+    color: #222222;
+    font-size: 2rem;
+}
+.mp-features-subtitle{
+    color: #8c8c8c;
+    font-size: 1rem;
+}
+
+.mp-baner-left-bg{
+    text-align: left;
+}
+.mp-baner-left-title{
+    color: #FFFFFF;
+    font-size: 2rem;
+}
+.mp-baner-left-subtitle{
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    color: #8c8c8c;
+    font-size: 1.5rem;
+}
+
+
+.mp-baner-right-bg{
+    text-align: right;
+}
+.mp-baner-right-title{
+    color: #FFFFFF;
+    font-size: 2rem;
+}
+.mp-baner-right-subtitle{
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    color: #8c8c8c;
+    font-size: 1.5rem;
+}
+
+.mp-dual-column{
+    text-align: center;
+}
+.mp-dual-column-title{
+    color: #222222;
+    font-size: 3rem;
+}
+.mp-dual-column-subtitle{
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    color: #8c8c8c;
+    font-size: 1.5rem;
+}
+
+
 .img-responsive {
     width: 100%;
 }
