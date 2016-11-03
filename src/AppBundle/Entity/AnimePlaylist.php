@@ -17,6 +17,7 @@ class AnimePlaylist
      *
      * @ORM\Column(name="id", type="integer")
      * @ORM\Id
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\animeList")
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;

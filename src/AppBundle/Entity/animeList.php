@@ -45,6 +45,7 @@ class animeList
     /**
      * @var int
      *
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\AnimePlaylist")
      * @ORM\Column(name="play_list", type="integer", nullable=true)
      */
     private $playList;
