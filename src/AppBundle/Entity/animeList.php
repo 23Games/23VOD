@@ -155,11 +155,27 @@ class animeList
     }
 
     /**
+     * @param int $playList
+     */
+    public function setPlayList(int $playList)
+    {
+        $this->playList = $playList;
+    }
+
+    /**
+     * @return int
+     */
+    public function getPlayList(): int
+    {
+        return $this->playList;
+    }
+
+    /**
      * Set author
      *
      * @param integer $author
      *
-     * @return freeAnime
+     * @return animeList
      */
     public function setAuthor($author)
     {
@@ -183,7 +199,7 @@ class animeList
      *
      * @param boolean $free
      *
-     * @return freeAnime
+     * @return animeList
      */
     public function setFree($free)
     {
@@ -207,7 +223,7 @@ class animeList
      *
      * @param string $content
      *
-     * @return freeAnime
+     * @return animeList
      */
     public function setContent($content)
     {

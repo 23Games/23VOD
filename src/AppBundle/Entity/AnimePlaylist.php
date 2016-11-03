@@ -25,6 +25,13 @@ class AnimePlaylist
     /**
      * @var int
      *
+     * @ORM\Column(name="anime", type="integer")
+     */
+    private $anime;
+
+    /**
+     * @var int
+     *
      * @ORM\Column(name="season", type="integer")
      */
     private $season;
@@ -59,6 +66,22 @@ class AnimePlaylist
     public function getId()
     {
         return $this->id;
+    }
+
+    /**
+     * @param int $anime
+     */
+    public function setAnime(int $anime)
+    {
+        $this->anime = $anime;
+    }
+
+    /**
+     * @return int
+     */
+    public function getAnime(): int
+    {
+        return $this->anime;
     }
 
     /**
