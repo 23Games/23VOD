@@ -1,0 +1,2 @@
+INSERT INTO vod.animelist (title, description, movie, play_list, author, free, content) VALUES ('Naruto', 'Bajka o ninja', 0, 1, 1, 1, '<script src="//content.jwplatform.com/players/g1vHS6ak-1l85A81K.js"></script>');
+INSERT INTO vod.animelist (title, description, movie, play_list, author, free, content) VALUES ('Naruto: Shippuden', 'Bajka o ninja', 0, 1, 1, 1, '<iframe src="https://drive.google.com/file/d/0B7hDbfCJcpJSNmhubXQxTGV6dVE/preview" width="640" height="480"></iframe>');

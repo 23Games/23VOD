@@ -2,7 +2,21 @@
 
 {% block body %}
     <div class="container">
-        <h1>{{ anime.info.title }}</h1>
-        {{ anime.info.content|raw }}
+        {% if anime.playlist %}
+            <div class="row">
+                <div class="col-md-8">
+                    {{ anime.playlist.0.content|raw }}
+                </div>
+                <div class="col-md-4">
+                    <ul>
+                        {% for position in anime.playlist %}
+                            <li>Sezon {{ position.season }} Odcinek {{ position.episode }} - {{ position.title }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        {% else %}
+            <h1>{{ anime.info.title }}</h1>
+        {% endif %}
     </div>
 {% endblock %}
