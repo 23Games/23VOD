@@ -12,7 +12,6 @@ class FreeController extends Controller
      */
     public function showAllAction()
     {
-
         $showAll = $this->getDoctrine()->getRepository('AppBundle:animeList')->createQueryBuilder('p')
             ->where('p.free = true')
             ->orderBy('p.title', 'ASC')
@@ -23,5 +22,4 @@ class FreeController extends Controller
             'anime' => $showAll
         ]);
     }
-
 }
