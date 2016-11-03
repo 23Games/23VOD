@@ -34,7 +34,7 @@ class DefaultController extends Controller
                 ->getRepository('AppBundle:AnimePlaylist')->findBy(['anime' => $anime['info']->getId()]);
         }
 
-        return $this->render('default/index.html.twig', [
+        return $this->render('default/player.html.twig', [
             'anime' => $anime
         ]);
     }
