@@ -11,7 +11,7 @@ class AppBundle extends Bundle
     {
         $country = unserialize(file_get_contents('http://www.geoplugin.net/php.gp?ip=' . $request->getClientIp()));
 
-        if ($country['geoplugin_countryCode'] != 'DE' && $country['geoplugin_status'] != 404) {
+        if ($country['geoplugin_countryCode'] != 'PL' || $country['geoplugin_status'] == 404) {
             return false;
         }
         return true;
