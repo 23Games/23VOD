@@ -3,5 +3,9 @@
 {% block title %}AppBundle:Free:showAll{% endblock %}
 
 {% block body %}
-<h1>Welcome to the Free:showAll page</h1>
+<ul>
+    {% for animu in anime %}
+        <li>{{ animu.title }}</li>
+    {% endfor %}
+</ul>
 {% endblock %}

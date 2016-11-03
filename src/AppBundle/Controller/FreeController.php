@@ -8,13 +8,20 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 class FreeController extends Controller
 {
     /**
-     * @Route("/free/showAll")
+     * @Route("/free/showAll", name="free.all")
      */
     public function showAllAction()
     {
-        return $this->render(':Free:show_all.html.twig', array(
-            // ...
-        ));
+
+        $showAll = $this->getDoctrine()->getRepository('AppBundle:animeList')->createQueryBuilder('p')
+            ->where('p.free = true')
+            ->orderBy('p.title', 'ASC')
+            ->getQuery()
+            ->getResult();
+
+        return $this->render(':Free:show_all.html.twig', [
+            'anime' => $showAll
+        ]);
     }
 
 }
