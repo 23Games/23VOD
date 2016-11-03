@@ -21,9 +21,16 @@ class DefaultController extends Controller
 
     /**
      * @Route("/player/{id}", name="player")
+     * @param Request $request
+     * @param $id
+     * @return \Symfony\Component\HttpFoundation\Response|\Symfony\Component\HttpKernel\Exception\NotFoundHttpException
      */
     public function playerAction(Request $request, $id)
     {
+        if ($this->getUser() == null){
+            return  $this->render('default/index.html.twig');
+        }
+
         if (\AppBundle\AppBundle::regionalLock($request)){
             return $this->render('default/regional_lock.html.twig');
         }

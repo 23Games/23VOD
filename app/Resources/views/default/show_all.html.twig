@@ -5,16 +5,14 @@
 {% block body %}
     <table>
         <tr>
-            {# sorting of properties based on query components #}
             <th>{{ knp_pagination_sortable(pagination, 'Id', 'a.id') }}</th>
             <th{% if pagination.isSorted('a.Title') %} class="sorted"{% endif %}>{{ knp_pagination_sortable(pagination, 'Title', 'a.title') }}</th>
         </tr>
 
-        {# table body #}
-        {% for article in pagination %}
+        {% for var in pagination %}
             <tr {% if loop.index is odd %}class="color"{% endif %}>
-                <td>{{ article.id }}</td>
-                <td>{{ article.title }}</td>
+                <td>{{ var.id }}</td>
+                <td><a href="{{ url('player', {'id':var.id}) }}">{{ var.title }}</a></td>
             </tr>
         {% endfor %}
     </table>

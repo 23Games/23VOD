@@ -10,6 +10,9 @@ class VideoListController extends Controller
 {
     /**
      * @Route("/list/{page}", name="list")
+     * @param Request $request
+     * @param int $page
+     * @return \Symfony\Component\HttpFoundation\Response
      */
     public function showAllAction(Request $request, $page = 1)
     {
