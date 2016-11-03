@@ -11,6 +11,10 @@
 .pt-8{
     padding-top: 8rem!important;
 }
+.pt-4{
+    padding-top: 4rem!important;
+}
+
 .nav-color{
     background-color: #2b2d2f;
 }
@@ -20,6 +24,7 @@
 .mp-baner-bg{
     min-height: 640px;
     text-align: center;
+    background-size: cover;
 }
 .mp-baner-title{
     font-family: pixel;
@@ -64,6 +69,7 @@
 
 .mp-baner-left-bg{
     text-align: left;
+    background-size: cover;
 }
 .mp-baner-left-title{
     color: #FFFFFF;
@@ -79,6 +85,7 @@
 
 .mp-baner-right-bg{
     text-align: right;
+    background-size: cover;
 }
 .mp-baner-right-title{
     color: #FFFFFF;
