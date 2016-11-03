@@ -2,6 +2,7 @@
 
 namespace AppBundle\Controller;
 
+use AppBundle\AppBundle;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
@@ -23,10 +24,8 @@ class DefaultController extends Controller
      */
     public function playerAction(Request $request, $id)
     {
-        $country = unserialize(file_get_contents('http://www.geoplugin.net/php.gp?ip='.$request->getClientIp()));
-
-        if ($country['geoplugin_countryCode'] != 'DE' && $country['geoplugin_status'] != 404){
-            return $this->redirectToRoute('homepage');
+        if (\AppBundle\AppBundle::regionalLock($request)){
+            return $this->render('default/regional_lock.html.twig');
         }
 
         $anime['info'] = $this->getDoctrine()->getRepository('AppBundle:animeList')->findOneBy(['id' => $id]);
