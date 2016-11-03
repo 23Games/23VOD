@@ -1,22 +1,35 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <div class="container">
-        {% if anime.playlist %}
-            <div class="row">
-                <div class="col-md-8">
-                    {{ anime.playlist.0.content|raw }}
-                </div>
-                <div class="col-md-4">
-                    <ul>
-                        {% for position in anime.playlist %}
-                            <li>Sezon {{ position.season }} Odcinek {{ position.episode }} - {{ position.title }}</li>
-                        {% endfor %}
-                    </ul>
-                </div>
-            </div>
-        {% else %}
-            <h1>{{ anime.info.title }}</h1>
-        {% endif %}
+    <div class="bg-player">
+        <div class="container-fluid" style="max-width: 1760px;">
+            {{ anime.playlist.0.content|raw }}
+        </div>
+            {#<div class="container">#}
+            {#{% if anime.playlist %}#}
+                {#<div class="row">#}
+                    {#<div class="col-md-8">#}
+                        {#{{ anime.playlist.0.content|raw }}#}
+                    {#</div>#}
+                    {#<div class="col-md-4">#}
+                        {#<ul>#}
+                            {#{% for position in anime.playlist %}#}
+                                {#<li>Sezon {{ position.season }} Odcinek {{ position.episode }} - {{ position.title }}</li>#}
+                            {#{% endfor %}#}
+                        {#</ul>#}
+                    {#</div>#}
+                {#</div>#}
+            {#{% else %}#}
+                {#<h1>{{ anime.info.title }}</h1>#}
+            {#{% endif %}#}
+        {#</div>#}
     </div>
+    <script>
+        window.onload=toBottom;
+
+        function toBottom()
+        {
+            window.scrollBy(0, 100);
+        }
+    </script>
 {% endblock %}

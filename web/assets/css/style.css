@@ -112,6 +112,11 @@
     font-size: 1.5rem;
 }
 
+.bg-player{
+    background-color: #000000;
+
+}
+
 
 .img-responsive {
     width: 100%;
