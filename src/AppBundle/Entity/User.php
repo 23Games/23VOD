@@ -18,6 +18,27 @@ class User extends BaseUser
      */
     protected $id;
 
+    /**
+     * @ORM\Column(type="datetime", nullable=true)
+     */
+    protected $premium;
+
+    /**
+     * @param mixed $premium
+     */
+    public function setPremium($premium)
+    {
+        $this->premium = $premium;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getPremium()
+    {
+        return $this->premium;
+    }
+
     public function __construct()
     {
         parent::__construct();

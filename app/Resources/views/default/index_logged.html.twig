@@ -1,0 +1,9 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}AppBundle:Free:showAll{% endblock %}
+
+{% block body %}
+    {% for anime in video %}
+        <a href="{{ url('player', {'id':anime.id}) }}"></a>{{ anime.title }} <br>
+    {% endfor %}
+{% endblock %}

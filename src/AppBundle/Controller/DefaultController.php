@@ -12,10 +12,24 @@ class DefaultController extends Controller
     /**
      * @Route("/", name="homepage")
      */
-    public function indexAction()
+    public function indexAction(Request $request, $page = 1)
     {
-        return $this->render('default/index.html.twig', [
-            'base_dir' => realpath($this->getParameter('kernel.root_dir') . '/..') . DIRECTORY_SEPARATOR,
+        if (!$this->getUser()){
+            return $this->render('default/index.html.twig', [
+                'base_dir' => realpath($this->getParameter('kernel.root_dir') . '/..') . DIRECTORY_SEPARATOR,
+            ]);
+        }
+
+        $datetime = new \DateTime('now');
+
+        if ($this->getUser()->getPremium() > $datetime){
+            $video = $this->getDoctrine()->getRepository('AppBundle:animeList')->findAll();
+        } else {
+            $video = $this->getDoctrine()->getRepository('AppBundle:animeList')->findBy(['free' => 1]);
+        }
+
+        return $this->render('default/index_logged.html.twig', [
+            'video' => $video
         ]);
     }
 
