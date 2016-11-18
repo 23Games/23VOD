@@ -15,9 +15,7 @@ class DefaultController extends Controller
     public function indexAction(Request $request, $page = 1)
     {
         if (!$this->getUser()){
-            return $this->render('default/index.html.twig', [
-                'base_dir' => realpath($this->getParameter('kernel.root_dir') . '/..') . DIRECTORY_SEPARATOR,
-            ]);
+            return $this->render('default/index.html.twig');
         }
 
         $datetime = new \DateTime('now');
@@ -41,11 +39,11 @@ class DefaultController extends Controller
      */
     public function playerAction(Request $request, $id)
     {
-//        if ($this->getUser() == null){
-//            return  $this->render('default/index.html.twig');
-//        }
+        if ($this->getUser() == null){
+            return  $this->redirectToRoute('fos_user_security_login');
+        }
 
-        if (\AppBundle\AppBundle::regionalLock($request)){
+        if (AppBundle::regionalLock($request)){
             return $this->render('default/regional_lock.html.twig');
         }
 

@@ -71,6 +71,13 @@ class animeList
      */
     private $content;
 
+    /**
+     * @var bool
+     *
+     * @ORM\Column(name="iframe", type="boolean")
+     */
+    private $iframe;
+
 
     /**
      * Get id
@@ -240,6 +247,24 @@ class animeList
     public function getContent()
     {
         return $this->content;
+    }
+
+    /**
+     * @param boolean $iframe
+     */
+    public function setIframe(bool $iframe)
+    {
+        $this->iframe = $iframe;
+    }
+
+    /**
+     * Get iframe
+     *
+     * @return string
+     */
+    public function getIframe()
+    {
+        return $this->iframe;
     }
 }
 

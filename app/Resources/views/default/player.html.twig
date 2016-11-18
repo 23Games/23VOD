@@ -2,34 +2,34 @@
 
 {% block all %}
     <div class="bg-player">
-        <div class="container-fluid" style="max-width: 1760px;">
-            {{ anime.playlist.0.content|raw }}
+        <div class="container-fluid">
+            <div id="player">
+                Loading the player...
+            </div>
         </div>
-            {#<div class="container">#}
-            {#{% if anime.playlist %}#}
-                {#<div class="row">#}
-                    {#<div class="col-md-8">#}
-                        {#{{ anime.playlist.0.content|raw }}#}
-                    {#</div>#}
-                    {#<div class="col-md-4">#}
-                        {#<ul>#}
-                            {#{% for position in anime.playlist %}#}
-                                {#<li>Sezon {{ position.season }} Odcinek {{ position.episode }} - {{ position.title }}</li>#}
-                            {#{% endfor %}#}
-                        {#</ul>#}
-                    {#</div>#}
-                {#</div>#}
-            {#{% else %}#}
-                {#<h1>{{ anime.info.title }}</h1>#}
-            {#{% endif %}#}
-        {#</div>#}
     </div>
-    <script>
-        window.onload=toBottom;
+{% endblock %}
 
-        function toBottom()
-        {
-            window.scrollBy(0, 100);
-        }
-    </script>
+{% block javascripts %}
+    {{ parent() }}
+    {% if anime.info.iframe == 0 %}
+        <script src="https://content.jwplatform.com/libraries/1l85A81K.js"></script>
+        <script type="text/javascript">
+            jwplayer("player").setup({
+                {% if anime.info.playlist == 1 %}
+                {% for playlist in anime.playlist %}
+                file: "{{ playlist.content|raw }}",
+                {% endfor %}
+                {% else %}
+                file: "{{ anime.info.content|raw }}",
+                {% endif %}
+            });
+        </script>
+    {% else %}
+        <script>
+            $("#player").html('<div class="embed-responsive embed-responsive-16by9">' +
+                    '<iframe class="embed-responsive-item" src="{{ anime.info.content }}"></iframe>' +
+                    '</div>');
+        </script>
+    {% endif %}
 {% endblock %}

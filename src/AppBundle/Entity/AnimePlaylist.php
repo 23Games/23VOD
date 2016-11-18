@@ -57,6 +57,13 @@ class AnimePlaylist
      */
     private $content;
 
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="iframe", type="boolean")
+     */
+    private $iframe = false;
+
 
     /**
      * Get id
@@ -178,6 +185,22 @@ class AnimePlaylist
     public function getContent()
     {
         return $this->content;
+    }
+
+    /**
+     * @return string
+     */
+    public function getIframe(): string
+    {
+        return $this->iframe;
+    }
+
+    /**
+     * @param string $iframe
+     */
+    public function setIframe(string $iframe)
+    {
+        $this->iframe = $iframe;
     }
 }
 
